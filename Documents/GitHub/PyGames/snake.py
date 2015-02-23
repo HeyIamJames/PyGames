@@ -7,6 +7,7 @@ pygame.init()
 white = (255,255,255)
 black = (0,0,0)
 red = (255,0,0)
+green = (0, 155, 0)
 
 display_width = 800
 display_height = 600
@@ -23,9 +24,15 @@ pygame.display.set_caption('Simple Snake')
 
 clock = pygame.time.Clock()
 block_size = 10
-FPS = 30
+FPS = 20
 
 font = pygame.font.SysFont(None, 25)
+
+def snake(block_size, snakelist):
+    for XnY in snakelist:
+        pygame.draw.rect(gameDisplay, green, [XnY[0], XnY[1], block_size, block_size])
+
+
 
 def message_to_screen(msg,color):
     screen_text = font.render(msg, True, color)
@@ -41,8 +48,11 @@ def gameLoop():
     lead_x_change = 0
     lead_y_change = 0
 
-    randAppleX = random.randrange(0, display_width-block_size)
-    randAppleY = random.randrange(0, display_height-block_size)
+    snakeList = []
+    snakeLength = 10
+
+    randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0
+    randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
     
     while not gameExit:
 
@@ -85,9 +95,25 @@ def gameLoop():
         lead_y += lead_y_change
         gameDisplay.fill(white)
         pygame.draw.rect(gameDisplay, red, [randAppleX, randAppleY, block_size, block_size])
-        pygame.draw.rect(gameDisplay, black, [lead_x, lead_y, block_size, block_size])
         # () = where,color,coordinates and size
+        
+        snakeHead = []
+        snakeHead.append(lead_x)
+        snakeHead.append(lead_y)
+        snakeList.append(snakeHead)
+
+        if len(snakeList) > snakeLength:
+            del snakeList[0]
+        
+        
+        snake(block_size, snakeList)
+        snake(block_size, snakeList)
+        
         pygame.display.update()
+
+        if lead_x == randAppleX and lead_y == randAppleY:
+            randAppleX = round(random.randrange(0, display_width-block_size)/10.0)*10.0
+            randAppleY = round(random.randrange(0, display_height-block_size)/10.0)*10.0
 
         clock.tick(FPS)
                     
@@ -98,41 +124,3 @@ def gameLoop():
     quit()
 
 gameLoop()
-
-clock = pygame.time.Clock()
-
-while not gameExit:
-    for event in pygame.event.get():
-        print(event)
-        if event.type == pygame.QUIT:
-            gameExit = True
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:
-                lead_x_change = -10
-                lead_y_change = 0
-            elif event.key == pygame.K_RIGHT:
-                lead_x_change = 10
-                lead_y_change = 0
-            elif event.key == pygame.K_UP:
-                lead_y_change = -10
-                lead_x_change = 0
-            elif event.key == pygame.K_DOWN:
-                lead_y_change = 10
-                lead_x_change = 0
-
-    if lead_x >= 800or lead_x < 0 or lead_y >= 600 or lead_y < 0:
-        gameExit = True
-
-
-    lead_x += lead_x_change
-    lead_y += lead_y_change
-    gameDisplay.fill(white)
-    pygame.draw.rect(gameDisplay, black, [lead_x, lead_y, 10, 10])
-    # () = where,color,coordinates and size
-    pygame.display.update()
-
-    clock.tick(15)
-		
-
-pygame.quit()
-quit()
