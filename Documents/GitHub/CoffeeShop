@@ -1,7 +1,4 @@
-# Use idiomatic python and Object-Oriented techniques to create a program that models some 
-# aspect of a coffee shop. You can decide what aspects you want to represent in your program, 
-# but you should make use of at least 3 object constructors, and show how the objects interact. 
-# Be prepared to talk about the decisions you made, and the reasoning for those decisions.
+
 # > coffee, barista, customer, cofeeshop, manager, atm
 
 class CoffeeShop(object):
@@ -46,7 +43,6 @@ class Coffee(object):
         self.caffine = caffine
         self.refreshing = True
         self.hot = True    
-        
 
 Shop1 = CoffeeShop("JamesCoffee")
 Shop1.name
