@@ -1,0 +1,59 @@
+# Use idiomatic python and Object-Oriented techniques to create a program that models some 
+# aspect of a coffee shop. You can decide what aspects you want to represent in your program, 
+# but you should make use of at least 3 object constructors, and show how the objects interact. 
+# Be prepared to talk about the decisions you made, and the reasoning for those decisions.
+# > coffee, barista, customer, cofeeshop, manager, atm
+
+class CoffeeShop(object):
+    def __init__(self, name):
+        self.name = name
+        self.isOpen = True
+
+    def open(self):
+        if self.isOpen:
+            print("The CoffeeShop is already open for buisness!")
+        else:
+            self.isOpen = True
+            print("The CoffeeShop is now open for buisness!")
+
+    def close(self):
+    	if not self.isOpen:
+    	    print("The CoffeeShop is already closed for buisness!")
+    	else:
+    		self.isOpen = False
+    		print("The CoffeeShop is now closed for buisness!")
+
+class Barista(object):
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender 
+        print("Hi my name is %s how may I serve you?" %self.name)
+        self.satisfied = True
+
+    def giveCoffee(self, Customer):
+        Customer.caffineLevel += 1 
+
+class Customer(object):
+    def __init__(self, name, gender):
+        self.name = name
+        self.gender = gender 
+        print("I am %s, I am very thirsty!" %self.name)
+        self.satisfied = False
+        self.caffineLevel = 0
+
+class Coffee(object):
+    def __init__(self, caffine):
+        self.caffine = caffine
+        self.refreshing = True
+        self.hot = True    
+        
+
+Shop1 = CoffeeShop("JamesCoffee")
+Shop1.name
+Shop1.isOpen
+Amy = Barista("Amy", "Female")
+Amy.satisfied 
+Joe = Customer("Joe", "Male")
+Joe.satisfied 
+Latte = Coffee(10)
+Amy.giveCoffee(Joe)
