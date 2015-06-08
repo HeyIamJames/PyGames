@@ -13,40 +13,47 @@ class CoffeeShop(object):
             print("The CoffeeShop is now open for buisness!")
 
     def close(self):
-        if not self.isOpen:
-            print("The CoffeeShop is already closed for buisness!")
-        else:
-            self.isOpen = False
-            print("The CoffeeShop is now closed for buisness!")
+    	if not self.isOpen:
+    	    print("The CoffeeShop is already closed for buisness!")
+    	else:
+    		self.isOpen = False
+    		print("The CoffeeShop is now closed for buisness!")
+
 
 class Barista(object):
-    def __init__(self, name, gender):
+    def __init__(self, name):
         self.name = name
-        self.gender = gender 
         print("Hi my name is %s how may I serve you?" %self.name)
         self.satisfied = True
+        self.employed = True
 
     def giveCoffee(self, Customer):
         Customer.caffineLevel += 1 
 
+
 class Customer(object):
-    def __init__(self, name, gender):
-        self.name = name
-        self.gender = gender 
+    def __init__(self, name):
+        self.name = name 
         print("I am %s, I am very thirsty!" %self.name)
         self.satisfied = False
-        self.caffineLevel = 1
+        self.caffineLevel = 0
+
 
 class Manager(object):
-    def __init__(self, name, gender):
+    def __init__(self, name):
         self.name = name
-        self.gender = gender
         self.satisfied = False
 
+    def fireBarista(self, Barista):
+        self.Barista = Barista
+        print("%s is unemployed" %Barista.name)
+        Barista.employed = False
+        Barista.satisfied = False
+        
     def checkCustomer(self, Customer):
-        if Customer.caffineLevel > 5:
+        if Customer.caffineLevel >= 5:
             Customer.satisfied = True
-            print("The Customer is very awake and satisfied!")
+            print("%s is very awake and satisfied!!" %Customer.name)
         else:
             print("I suggest you call over your Barista and order some coffee.")
 
@@ -61,9 +68,9 @@ class Manager(object):
 
 Shop1 = CoffeeShop("JamesCoffee")
 Shop1.open()
-Amy = Barista("Amy", "Female")
-Joe = Customer("Joe", "Male")
-Don = Manager("Don", "Male")
+Amy = Barista("Amy")
+Joe = Customer("Joe")
+Don = Manager("Don")
 Amy.giveCoffee(Joe)
 Amy.giveCoffee(Joe)
 Don.checkCustomer(Joe)
@@ -74,4 +81,5 @@ Amy.giveCoffee(Joe)
 Don.checkCustomer(Joe)
 Don.satisfaction(Joe)
 Shop1.close()
+Don.fireBarista(Amy)
 
