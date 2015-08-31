@@ -7,7 +7,6 @@ def draw_snowman(screen, x, y):
 
 pygame.init()
 
-
 BLACK = [0,0,0]
 WHITE = [255,255,255]
 RED = [255,0,0]
@@ -42,7 +41,6 @@ while not done:
     screen.fill(WHITE)
     pygame.mouse.set_visible(False)
     pos = pygame.mouse.get_pos()
-    #print(pos)
     x=pos[0]
     y=pos[1]
 
