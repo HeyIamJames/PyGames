@@ -34,7 +34,7 @@ def snake(block_size, snakelist):
 
 
 
-def message_to_screen(msg,color):
+def message_to_screen(msg,color, y_displace=0):
     screen_text = font.render(msg, True, color)
     gameDisplay.blit(screen_text, [display_width/2, display_height/2])
 
