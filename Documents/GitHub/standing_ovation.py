@@ -52,3 +52,11 @@ In Case #3, one optimal solution is to add two audience members with Si = 2.
 
 In Case #4, there is only one audience member and he will stand up immediately. No friends need to be invited.
 """
+def small(input):
+    for t in xrange(input()):
+        sm = mx = 0
+        for s,d in enumerate(raw_input().split()[1]):
+            mx = max(mx,s-sm)
+            sm+= int(d)
+        print "Case #%d: %d"%(t+1,mx)
+
