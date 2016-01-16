@@ -37,3 +37,5 @@ Large dataset
 1 ≤ D ≤ 1000.
 1 ≤ Pi ≤ 1000.
 """
+
+#if anyone has > 1 pancakes than anyone else, move. repeat untill delta is < 1
