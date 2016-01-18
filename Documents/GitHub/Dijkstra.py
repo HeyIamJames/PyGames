@@ -23,3 +23,12 @@ Output
 
 For each test case, output one line containing "Case #x: y", where x is the test case number (starting from 1) and y is either YES or NO, depending on whether the string can be broken into three parts that reduce to i, j, and k, in that order, as described above.
 """
+
+idxs = ["1","i","j","k"]
+
+lookup = [
+	["1","i","j","k"],
+	["i","-1","k","-j"],
+	["j","-k","-1","i"],
+	["k","j","-i","-1"]
+]
