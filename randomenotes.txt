@@ -40,3 +40,9 @@ def diff21(n):
     return 21 - n
   else:
     return (n - 21) * 2
+
+def pos_neg(a, b, negative):
+  if negative:
+    return (a < 0 and b < 0)
+  else:
+    return ((a < 0 and b > 0) or (a > 0 and b < 0))
