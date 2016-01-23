@@ -46,3 +46,9 @@ def pos_neg(a, b, negative):
     return (a < 0 and b < 0)
   else:
     return ((a < 0 and b > 0) or (a > 0 and b < 0))
+
+def array_count9(nums):
+  count = 0
+  for num in nums:
+    if num == 9:
+      count = count + 1
