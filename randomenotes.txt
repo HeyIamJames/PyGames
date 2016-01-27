@@ -29,26 +29,3 @@ def string_match(a, b):
     if a_sub == b_sub:
       count = count + 1
 
-def front_back(str):
-  if len(str) <= 1:
-    return str
-  mid = str[1:-1]
-  return str[len(str)-1] + mid + str[0]
-  
-def diff21(n):
-  if n <= 21:
-    return 21 - n
-  else:
-    return (n - 21) * 2
-
-def pos_neg(a, b, negative):
-  if negative:
-    return (a < 0 and b < 0)
-  else:
-    return ((a < 0 and b > 0) or (a > 0 and b < 0))
-
-def array_count9(nums):
-  count = 0
-  for num in nums:
-    if num == 9:
-      count = count + 1
