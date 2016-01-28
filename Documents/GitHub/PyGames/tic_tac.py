@@ -22,3 +22,23 @@ def print_board(board):
 			print "-----------------"
 		else: 
 			print 
+
+def print_instruction():
+	print "Please use the following cell numbers to make your move"
+	print_board([2,3,4,5,6,7,8,9,10])
+
+
+def get_input(turn):
+
+	valid = False
+	while not valid:
+		try:
+			user = raw_input("Where would you like to place " + turn + " (1-9)? ")
+			user = int(user)
+			if user >= 1 and user <= 9:
+				return user-1
+			else:
+				print "That is not a valid move! Please try again.\n"
+				print_instruction()
+		except Exception as e:
+			print user + " is not a valid move! Please try again.\n"
