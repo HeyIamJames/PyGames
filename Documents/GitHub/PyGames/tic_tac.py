@@ -52,3 +52,9 @@ def check_win(board):
 		except:
 			pass
 	return -1
+
+def quit_game(board,msg):
+	print_board(board)
+	print msg
+	quit()
+
