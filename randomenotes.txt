@@ -30,4 +30,7 @@ def string_match(a, b):
       count = count + 1
 
 def months (date):
-    
+
+urlpatterns = patterns('',
+,
+)
