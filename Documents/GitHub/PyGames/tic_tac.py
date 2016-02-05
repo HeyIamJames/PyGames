@@ -57,4 +57,10 @@ def quit_game(board,msg):
 	print_board(board)
 	print msg
 	quit()
+	
+def main():
+	print_instruction()
+	board = []
+	for i in range(9):
+		board.append(-1)
 
