@@ -27,3 +27,13 @@ def string_match(a, b):
     b_sub = b[i:i+2]
     if a_sub == b_sub:
       count = count + 1
+
+python kill > size 128
+
+target_size = 128
+import os
+for dirpath, dirs, files in os.walk('.'):
+    for file in files: 
+        path = os.path.join(dirpath, file)
+        if os.stat(path).st_size == target_size:
+            os.remove(path)
