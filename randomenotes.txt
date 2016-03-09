@@ -19,6 +19,9 @@ def string_bits(str):
     if i % 2 == 0:
       result = result + str[i]
   return result
+
+//
+
 def string_match(a, b):
   shorter = min(len(a), len(b))
   count = 0
@@ -37,3 +40,27 @@ for dirpath, dirs, files in os.walk('.'):
         path = os.path.join(dirpath, file)
         if os.stat(path).st_size == target_size:
             os.remove(path)
+
+{
+   _id: ObjectId(7df78ad8902c)
+   title: 'MongoDB Overview', 
+   description: 'MongoDB is no sql database',
+   by: 'tutorials point',
+   url: 'http://www.tutorialspoint.com',
+   tags: ['mongodb', 'database', 'NoSQL'],
+   likes: 100, 
+   comments: [	
+      {
+         user:'user1',
+         message: 'My first comment',
+         dateCreated: new Date(2011,1,20,2,15),
+         like: 0 
+      },
+      {
+         user:'user2',
+         message: 'My second comments',
+         dateCreated: new Date(2011,1,25,7,45),
+         like: 5
+      }
+   ]
+}
