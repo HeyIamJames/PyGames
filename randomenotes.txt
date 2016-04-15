@@ -132,3 +132,42 @@ for dirpath, dirs, files in os.walk('.'):
      }
    }
  }  
+
+N rooms from 1 : N
+S string with N charaters "RGB"
+R + B = G
+B + R = R
+G + R = B
+
+Example
+
+Input
+3
+3
+RGR
+3
+RRR
+3
+RGB
+Output
+1
+0
+2
+
+Solution:
+find more frequent color = F
+answer = len string - count of F
+
+
+def count(s):
+    r = 0
+    b = 0
+    g = 0
+    for i in s:
+        if i == "g":
+            g += 1
+        if i == "b":
+            b += 1
+        if i == "r":
+            r += 1
+    return g, r, b
