@@ -171,3 +171,10 @@ def count(s):
         if i == "r":
             r += 1
     return g, r, b
+
+
+def houses(n):
+    n = [g, r, b]
+    sums = sum(n)
+    high == max(n):
+    new == high - sums
