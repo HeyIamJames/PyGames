@@ -178,3 +178,15 @@ def houses(n):
     sums = sum(n)
     high == max(n):
     new == high - sums
+
+#include<iostream>
+ 
+using namespace std;
+ 
+int main(){
+  float amount,balance;
+  cin>>amount>>balance;
+  if((amount < balance-0.5) && (int(amount)%5 == 0))
+    balance = balance-amount-0.5;
+  cout<<balance<<endl;
+}
