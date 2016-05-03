@@ -190,3 +190,14 @@ int main(){
     balance = balance-amount-0.5;
   cout<<balance<<endl;
 }
+
+
+// 100 doors
+#include <iostream>
+#include <string>
+
+int main()
+{
+    for(int i=1; i*i<=100; i++)
+            std::cout<<"Door "<<i*i<<" is open!"<<std::endl;
+}
