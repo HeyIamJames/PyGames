@@ -301,3 +301,54 @@ int main()
   }
   return 0;
 }
+
+
+/// fib q
+m = 10**9+7
+p = 2000000016
+ 
+f2 = [[1,0]]
+for i in range(32):
+    a,b = f2[-1]
+    f2.append([(pow(a,2,m)+2*a*b)%m,(pow(a,2,m)+b**2)%m])
+ 
+def fib(x):
+    bi = list(bin(x))
+    res = None
+    i = 0
+    while len(bi) > 2:
+        if bi.pop() == '1':
+            if res:
+                a,b=res
+                c,d=f2[i]
+                res = [(c*(a+b)+a*d)%m,(a*c+b*d)%m]
+            else:
+                res = f2[i]
+        i += 1
+    return res
+ 
+def fib2(x, y):
+    a,b,c,d = x[0],x[1],y[0],y[1]
+    res = [(c*(a+b)+a*d)%m ,(a*c+b*d)%m]
+    return res
+ 
+n, q = [int(i) for i in input().split()]
+a = [int(i) for i in input().split()]
+ 
+for i in range(q):
+ 
+    typ, x, y = input().split()
+    x, y = int(x), int(y)
+    
+    if typ == 'Q':
+        res = fib(a[x-1]).copy()
+        for i in range(x,y):
+            fai = fib(a[i])
+            fnext = fib2(res,fai)
+            res[0] = (res[0] + fnext[0] + fai[0] ) % m
+            res[1] = (res[1] + fnext[1] + fai[1] ) % m
+        print(res[0])
+ 
+    else:
+        a[x-1]=y
+ 
