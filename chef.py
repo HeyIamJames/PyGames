@@ -37,3 +37,8 @@ def reverse(text):
     while index >= 0:
         r_text += text[index]
         index -= 1
+        
+'''
+quad formula solved for n, gauss eq:
+s = n(n+1)/2 
+n = (-1 +-  sqrt ( 1 + 8s ) ) / 2
