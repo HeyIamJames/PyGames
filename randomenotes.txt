@@ -352,3 +352,19 @@ for i in range(q):
     else:
         a[x-1]=y
  
+"""
+LDSC
+s + c*s
+
+5 1 5 1
+need 5 by 1 day
+
+10 2 2 2
+4, 8 = 12
+"""
+
+def likeme(L, D, S, C):
+    Likes = S + S * C
+    return L
+
+Likes = D * S
