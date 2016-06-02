@@ -369,7 +369,7 @@ def likeme(L, D, S, C):
 
 Likes = D * S
 
-ublic static Future<Boolean> portIsOpen(final ExecutorService es, final String ip, final int port, final int timeout) {
+Public static Future<Boolean> portIsOpen(final ExecutorService es, final String ip, final int port, final int timeout) {
   return es.submit(new Callable<Boolean>() {
       @Override public Boolean call() {
         try {
