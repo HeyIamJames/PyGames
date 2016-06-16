@@ -12,3 +12,30 @@ headers={'Content-Type': 'audio/x-flac; rate=16000', 'User-Agent':'Mozilla/5.0'}
 request = urllib2.Request(url, data=audio, headers=headers)
 response = urllib2.urlopen(request)
 print response.read()
+
+
+"permissions": {
+  "audio-capture" : {
+    "description" : "Audio capture"
+  },
+  "speech-recognition" : {
+    "description" : "Speech recognition"
+  }
+}
+
+<form>
+  <input type="text" class="txt">
+  <div>
+    <label for="rate">Rate</label><input type="range" min="0.5" max="2" value="1" step="0.1" id="rate">
+    <div class="rate-value">1</div>
+    <div class="clearfix"></div>
+  </div>
+  <div>
+    <label for="pitch">Pitch</label><input type="range" min="0" max="2" value="1" step="0.1" id="pitch">
+    <div class="pitch-value">1</div>
+    <div class="clearfix"></div>
+  </div>
+  <select>
+
+  </select>
+</form>
