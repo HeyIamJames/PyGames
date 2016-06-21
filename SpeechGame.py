@@ -1,3 +1,15 @@
+import sys
+from wit import Wit
+
+#actions dict > undefined 
+
+actions = {
+    'say': say,
+    'merge': merge,
+    'error': error,
+}
+
+
 #params
 
 --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.77 Safari/535.7' \
