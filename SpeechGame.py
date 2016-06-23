@@ -1,5 +1,8 @@
 import sys
 from wit import Wit
+import logging
+client = Wit(token, actions)
+client.logger.setLevel(logging.WARNING)
 
 #actions dict > undefined 
 
@@ -8,7 +11,7 @@ actions = {
     'merge': merge,
     'error': error,
 }
-
+resp = client.message('action')
 
 #params
 
