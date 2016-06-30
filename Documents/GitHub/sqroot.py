@@ -6,3 +6,8 @@ def sqroot(x):
       elif i>x:
           return i
     return i
+
+
+def count4(input):
+     s=[ x for x in input if x=="4"] 
+     return len(s)
