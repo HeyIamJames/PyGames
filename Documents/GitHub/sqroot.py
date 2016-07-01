@@ -11,3 +11,10 @@ def sqroot(x):
 def count4(input):
      s=[ x for x in input if x=="4"] 
      return len(s)
+
+def unique(input):
+    if input is string:
+        for i in range len(input):
+            i.pop():
+                if i in input:
+                    return False
