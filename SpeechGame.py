@@ -18,7 +18,27 @@ context0 = {}
 context1 = client.run_actions(session_id, 'who are you?', context0)
 print('name: ' + str(context1))
 
-resp = client.converse('1'
+resp = client.converse('1')
+
+from chatterbot import ChatBot
+chatbot = ChatBot("Bot1")
+from chatterbot.training.trainers import ListTrainer
+
+conversation = [
+    "Hello",
+    "Hi there!",
+    "How are you doing?",
+    "I'm doing great.",
+    "That is good to hear",
+    "Thank you.",
+    "You're welcome."
+]
+
+response = chatbot.get_response("Good morning!")
+
+
+chatbot.set_trainer(ListTrainer)
+chatbot.train(conversation)
 
 #params
 
