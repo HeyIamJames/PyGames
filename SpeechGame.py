@@ -40,6 +40,9 @@ response = chatbot.get_response("Good morning!")
 chatbot.set_trainer(ListTrainer)
 chatbot.train(conversation)
 
+client = Wit(access_token=access_token, actions=actions)
+client.interactive()
+
 #params
 
 --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.77 Safari/535.7' \
