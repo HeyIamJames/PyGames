@@ -10,6 +10,8 @@ actions = {
     'say': say,
     'merge': merge,
     'error': error,
+    'send': send,
+    'getForecast': get_forecast,
 }
 resp = client.message('action')
 
