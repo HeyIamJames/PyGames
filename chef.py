@@ -105,3 +105,10 @@ if all_same(itmes):
 
 def all_same(items):
     return all(x == items[0] for x in items)
+    
+def check_connectivity(reference):
+    try:
+        urllib.request.urlopen(reference, timeout=1)
+        return True
+    except urllib.request.URLError:
+        return False
