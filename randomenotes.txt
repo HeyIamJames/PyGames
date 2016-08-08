@@ -383,3 +383,15 @@ Public static Future<Boolean> portIsOpen(final ExecutorService es, final String 
       }
    });
 }
+
+//for xpath time
+var coll = menu.FindElements(By.TagName("label"));
+foreach (var label in coll)
+{
+  if(label.Text.Trim() =="Sign Out")
+  {
+      Log("Sign out was found.");
+      label.Click();
+      break;
+  }
+}
