@@ -4,3 +4,8 @@
 
 import re
 re.findall(r"\D(\d{6})\D", s)
+
+
+#how to replace char
+
+re.sub('[d]', ' ', x)
