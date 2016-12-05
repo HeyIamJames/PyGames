@@ -18,3 +18,7 @@ re.sub('[d]', ' ', x)
 >>> str = "h3110 23 cat 444.4 rabbit 11 2 dog"
 >>> [int(s) for s in str.split() if s.isdigit()]
 [23, 11, 2]
+
+#invest result> 
+re.findall("\W\w", {1}, s) 
+s = "ds 4"
